@@ -1,0 +1,34 @@
+<div class="container">
+<% if devise_error_messages! != "" %>
+	<div class="alert alert-danger"><p class="alert"><%= devise_error_messages! %></p></div>
+<% end %>
+<div class='col-md-6'>
+	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "profile-form", role: "form", method: :put }) do |f| %>
+	<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+	<%= f.email_field :email, class: "form-control top", placeholder: "E-Mail Address", required: true %>
+  	<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    	<div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  	<% end %>
+	<%= f.password_field :current_password, class: "form-control mid", placeholder: "Old Password", autocomplete: false %>
+	<%= f.password_field :password, class: "form-control mid", placeholder: "New Password", autocomplete: false %>
+	<%= f.password_field :password_confirmation, class: "form-control bottom", placeholder: "Repeat New Password", autocomplete: false %>
+	<div><%= f.submit "Update", class: "btn btn-lg btn-primary btn-block" %></div>
+
+	<% end %>
+
+	<%=form_for( resource, as: resource_name, url: url_for( :users_cancel ), html: { class: "profile-form", role: "form", method: :get }) do |f| %>
+	<h2>Cancel</h2>
+	<p>Unhappy?</p>
+	<div><%= f.submit "Cancel my Account", class: "btn btn-lg btn-primary btn-block" %></div>
+	<% end %>
+</div>
+<div class='col-md'6>
+	<h2>Your Rights</h2>
+	<ul>
+	<% current_user.right.each do |r| %>
+	<li><%=r.right_name %></li>
+	<% end %>
+	</ul>
+</div>
+</div>

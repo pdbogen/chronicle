@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+$navbar-default-bg: #D5DED9;
+$navbar-default-color: #7A6A53;
+$navbar-default-link-color: $navbar-default-color;
+$navbar-default-link-hover-color: #948C75;
+@import "bootstrap";
