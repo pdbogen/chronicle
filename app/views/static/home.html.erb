@@ -3,3 +3,9 @@
 	<p>chroniclr is a new (free!) service to help you track plan your sessions.</p>
 	<p><%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary btn-lg", role: "button" %></p>
 </div>
+<h1>User Directory</h1>
+<ul>
+<% User.all.each do |u| %>
+<li><%=link_to u.username, u%></li>
+<% end %>
+</ul>

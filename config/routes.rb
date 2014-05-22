@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/cancel' => 'user#cancel'
+  get 'users/cancel' => 'users#cancel'
   devise_for :users
+  resources :users, only: [ :show ]
+  get 'scenario' => 'scenarios#show'
+  get 'scenario/:page' => 'scenarios#show'
+#  resource :scenario, only: [ :show ]
+#  resources :scenarios, only: [ :show ]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

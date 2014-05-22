@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  retired: false
+  season: 1
+  episode: 1
+  lower_tier_lower: 1
+  lower_tier_upper: 1
+  mid_tier_lower: 1
+  mid_tier_upper: 1
+  high_tier_lower: 1
+  high_tier_upper: 1
+
+two:
+  name: MyString
+  retired: false
+  season: 1
+  episode: 1
+  lower_tier_lower: 1
+  lower_tier_upper: 1
+  mid_tier_lower: 1
+  mid_tier_upper: 1
+  high_tier_lower: 1
+  high_tier_upper: 1

@@ -4,7 +4,5 @@ class UsersHaveRights < ActiveRecord::Migration
       t.belongs_to :user
       t.belongs_to :right
     end
-    rename_column :users, :id, :user_id
-    rename_column :rights, :id, :right_id
   end
 end

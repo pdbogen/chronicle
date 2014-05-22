@@ -1,0 +1,31 @@
+<% if not @sort.empty? %>
+	<%=link_to nil, class: "btn btn-info btn-mini" do %>
+		<i class='glyphicon glyphicon-remove'></i>
+		Sorting by <%=@english_sort.join( ", " )%>
+	<% end %>
+<% end %>
+<br/>&nbsp;
+<table class='table table-striped'>
+<tr>
+	<th><%=sortable "season"%></th>
+	<th><%=sortable "episode"%></th>
+	<th><%=sortable "name"%></th>
+	<th><%=sortable "low_tier_lower", "Low Tier"%></th>
+	<th><%=sortable "mid_tier_lower", "Mid Tier"%></th>
+	<th><%=sortable "high_tier_lower", "High Tier"%></th>
+</tr>
+<% @scenarios.each do |s| %>
+<tr>
+	<td><%=s.season%></td>
+	<td><%=s.episode%></td>
+	<td><%=s.name%></td>
+	<td><%=s.low_tier_lower%>-<%=s.low_tier_upper%></td>
+	<td>
+	<% if not s.mid_tier_lower.nil? %>
+		<%=s.mid_tier_lower%>-<%=s.mid_tier_upper%>
+	<% end %>
+	</td>
+	<td><%=s.high_tier_lower%>-<%=s.high_tier_upper%></td>
+</tr>
+<% end %>
+</table>
