@@ -17,6 +17,7 @@ module ScenariosHelper
     def levels
         min_level = Scenario.minimum( :low_tier_lower )
         max_level = Scenario.maximum( :high_tier_upper )
+        return nil if min_level.nil? or max_level.nil?
         (min_level..max_level).to_a
     end
 
