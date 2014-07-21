@@ -40,7 +40,12 @@ module ScenariosHelper
 				}
 			)
 		end
-		content_tag :div, :class => "dropdown" do
+		if params[:expand] == column
+			dropdownClass = "dropdown open"
+		else
+			dropdownClass = "dropdown"
+		end
+		content_tag :div, :class => dropdownClass do
 			safe_join [
 				content_tag( :button, :class => "btn dropdown-toggle", :id => column+"Filter", "data-toggle" => "dropdown" ) {
 					safe_join [
@@ -63,7 +68,7 @@ module ScenariosHelper
 	def filterable_link( column, value, count )
 		content_tag( :a,
 		             :role => "menuitem",
-		             :href => scenario_path( sort: @sort, filters: build_filter( column, value ) ),
+		             :href => scenario_path( sort: @sort, filters: build_filter( column, value ), expand: column ),
 		) {
 			safe_join( [
 				in_filter?( column, value ) ?
