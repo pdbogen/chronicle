@@ -1,3 +1,18 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+button.dropdown-toggle {
+	margin-bottom: .5em;
+	width: 100%;
+	text-align: left;
+}
+
+button.dropdown-toggle > span.caret {
+	margin-left: -1em;
+}
+
+button.dropdown-toggle > span.dropdownText {
+	display: inline-block;
+	width: 100%;
+}
