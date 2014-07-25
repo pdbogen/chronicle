@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521234503) do
+ActiveRecord::Schema.define(version: 20140724032856) do
+
+  create_table "characters", force: true do |t|
+    t.string   "name",         limit: 128
+    t.text     "levels"
+    t.integer  "total_levels"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "play_sessions", force: true do |t|
     t.string   "name"

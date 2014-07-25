@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :right
   has_many :play_sessions
   has_many :scenarios, through: :play_sessions
+  has_many :characters
 end
