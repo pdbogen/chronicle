@@ -19,3 +19,34 @@ $navbar-default-color: #7A6A53;
 $navbar-default-link-color: $navbar-default-color;
 $navbar-default-link-hover-color: #948C75;
 @import "bootstrap";
+
+form.profile-form {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+form input.top {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: -1px;
+}
+
+form input.mid {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: -1px;
+}
+
+form input.bottom {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 1em;
+}
+
+form span.instructions {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	display: block;
+}
