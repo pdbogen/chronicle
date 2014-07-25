@@ -1,0 +1,36 @@
+// Place all the styles related to the Characters controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.vcenter {
+	display: table !important;
+	vertical-align: middle;
+	float: none;
+}
+
+.tile {
+	border: 2px solid #333;
+	border-radius: 1em;
+}
+
+.avatar div.glyphicon {
+	margin-top: .25em;
+	font-size: 4em;
+	padding-top: .04em;
+	height: 1em;
+	color: #C2CFC8;
+}
+
+.avatar {
+	height: 6em;
+	text-align: center;
+}
+
+.charname {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+a div.tile {
+	color: #333;
+}
