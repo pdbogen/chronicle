@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   has_many :play_sessions
   has_many :scenarios, through: :play_sessions
   has_many :characters
+
+  def has_right?( right_name )
+    right.where( right_name: right_name ).any?
+  end
 end
