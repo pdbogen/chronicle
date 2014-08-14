@@ -34,3 +34,44 @@
 a div.tile {
 	color: #333;
 }
+
+.classbtn span.glyphicon {
+	font-size: 4em;
+	padding-top: .1em;
+}
+
+.levelBtn:hover span.glyphicon-remove {
+	display: inline;
+	position: absolute;
+	top: .7em;
+	right: .7em;
+}
+
+.levelBtn span.glyphicon-remove {
+	display: none;
+}
+
+div#levelContainer {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+div.subtitle {
+	font-size: 1.5em;
+	color: #999;
+}
+
+div.subtitle small {
+	font-size: .5em;
+}
+
+span.instruction.glyphicon {
+	color: #999;
+	font-size: 2em;
+	top: .3em;
+	margin-bottom: .3em;
+}
+
+span.instruction.text {
+	padding: 0;
+}
