@@ -2,6 +2,18 @@
 <% if devise_error_messages! != "" %>
 	<div class="alert alert-danger"><p class="alert"><%= devise_error_messages! %></p></div>
 <% end %>
+<% if session[ :message ] %>
+	<div class="alert alert-danger"><p class="alert"><%=session[ :message ]%></p></div>
+<%
+  session.delete( :message )
+end
+%>
+<% if session[ :toast ] %>
+	<div class="alert alert-success"><p class="alert"><%=session[ :toast ]%></p></div>
+<%
+  session.delete( :toast )
+end
+%>
 <div class='col-md-6'>
 	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "profile-form", role: "form", method: :put }) do |f| %>
 	<h2>Edit <%= resource_name.to_s.humanize %></h2>
@@ -24,6 +36,11 @@
 	<% end %>
 </div>
 <div class='col-md-6'>
+	<h2>Your Pathfinder Info</h2>
+	<%= form_for( current_user, html: { class: "profile-form", role: "form", method: :post } ) do |f| %>
+		<%= f.text_field  :pfs_number, class: "form-control mid", placeholder: "PFS Number" %><br/>
+		<div><%= f.submit "Save", class: "btn btn-lg btn-primary btn-block" %></div>
+	<% end %>
 	<h2>Your Rights</h2>
 	<ul>
 	<% current_user.right.each do |r| %>

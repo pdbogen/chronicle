@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   get 'users/cancel' => 'users#cancel'
   devise_for :users
   resources :users, only: [ :show ]
+  post 'users/:id' => 'users#update'
   get 'scenario' => 'scenarios#show'
   get 'scenario/:page' => 'scenarios#show'
   resources :characters, only: [ :index, :show, :new, :create ]
+
 #  get 'character' => 'characters#show'
 #  get 'character/new' => 'characters#new'
 #  resource :scenario, only: [ :show ]
