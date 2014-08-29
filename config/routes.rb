@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [ :show ]
   get 'scenario' => 'scenarios#show'
   get 'scenario/:page' => 'scenarios#show'
-  get 'character' => 'characters#show'
-  get 'character/new' => 'characters#new'
+  resources :characters, only: [ :index, :show, :new, :create ]
+#  get 'character' => 'characters#show'
+#  get 'character/new' => 'characters#new'
 #  resource :scenario, only: [ :show ]
 #  resources :scenarios, only: [ :show ]
   # The priority is based upon order of creation: first created -> highest priority.

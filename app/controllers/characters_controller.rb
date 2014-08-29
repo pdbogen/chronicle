@@ -1,6 +1,5 @@
 class CharactersController < ApplicationController
-	def show
-	end
+	def show; end
 
 	def new
 	end

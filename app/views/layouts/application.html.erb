@@ -30,7 +30,7 @@
 					<li class="<%='active' if current_page?(about_path)%>"><%=link_to "About", about_path %></li>
 					<li class="<%='active' if current_page?(scenario_path)%>"><%=link_to "Scenarios", scenario_path %></li>
 					<% if user_signed_in? %>
-					<li class="<%='active' if current_page?(character_path)%>"><%=link_to "Characters", character_path %></li>
+					<li class="<%='active' if current_page?(characters_path)%>"><%=link_to "Characters", characters_path %></li>
 					<% end %>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
