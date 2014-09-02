@@ -35,6 +35,12 @@ a div.tile {
 	color: #333;
 }
 
+button.classbtn {
+	width: 7em;
+	margin-right: 2em;
+	margin-bottom: 2em;
+}
+
 .classbtn span.glyphicon {
 	font-size: 4em;
 	padding-top: .1em;
@@ -52,7 +58,6 @@ a div.tile {
 }
 
 div#levelContainer {
-	margin-top: .5em;
 	margin-bottom: .5em;
 }
 
@@ -74,4 +79,12 @@ span.instruction.glyphicon {
 
 span.instruction.text {
 	padding: 0;
+}
+
+h1 span.flavor {
+	color: #999;
+}
+
+h1 {
+	margin-bottom: 0;
 }

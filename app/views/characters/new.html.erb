@@ -1,5 +1,29 @@
+<div class='col-md-12'>
+	<h1>Introduce yourself.</h1>
+<%
+	@errors.each { |e|
+		concat content_tag :div, e, { class: "alert alert-danger", role: "alert" }
+	}
+%>
+</div>
 <div class='col-md-6'>
-	<%= form_for :character do |f| %>
+<%
+	Classes.each { |c, details| concat class_button( c, details ) }
+%>
+</div>
+<div class='col-md-6'>
+	<%= form_for( Character.new, html: { :role => :form } ) do |f| %>
+		<div class='<%= (@errorfields[ "name" ]?"alert alert-danger":"") %>'>
+			<h1><span class='flavor'>What... is your </span>name<span class='flavor'>?</span></h1>
+			<%= f.text_field :name, :placeholder => "State your name, Pathfinder.", :class => "form-control", :value => @character[ 'name' ] || "" %> <br/>
+		</div>
+		<div class='<%= (@errorfields[ "levels" ]?"alert alert-danger":"") %>'>
+			<h1><span class='flavor'>What... is your </span>class<span class='flavor'>?</span></h1>
+			<%= f.hidden_field :levels %>
+			<%= tag "input", { :type => :hidden, :id => 'prefill_levels', :value => @character[ 'levels' ] || "{}" } %>
+			<div id='levelContainer'>
+			</div>
+		</div>
 		<%= f.submit :class => "btn btn-large btn-primary" %>
 	<% end %>
 </div>

@@ -73,12 +73,13 @@ form span.instructions {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin input.username {
+form input.username {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+
+form input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
